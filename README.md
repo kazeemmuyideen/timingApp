@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # myapp
 
 A new Flutter project.
@@ -14,3 +15,7 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+=======
+# timingApp
+The app is going to time for different location
+>>>>>>> e2d691fb0da192df2fe049d15917d10ecf610b8b
