@@ -5,6 +5,7 @@ void main() {
 }
 
 class Home extends StatelessWidget {
+  const Home({super.key});
   // const Home({super.key});
 
   @override
@@ -16,26 +17,31 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.red[600],
       ),
 
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+      body: Row(
         children: <Widget>[
-          Container(
-            padding: EdgeInsets.all(20.0),
-            color: Colors.cyan,
-            child: Text("One"),
+          Expanded(
+            flex: 6,
+            child: Container(
+              color: Colors.cyan,
+              padding: EdgeInsets.all(30.0),
+              child: Text("One"),
+            ),
           ),
-
-          Container(
-            padding: EdgeInsets.all(30.0),
-            color: Colors.pinkAccent,
-            child: Text("Two"),
+          Expanded(
+            flex: 3,
+            child: Container(
+              color: Colors.pink,
+              padding: EdgeInsets.all(30.0),
+              child: Text("Two"),
+            ),
           ),
-
-          Container(
-            padding: EdgeInsets.all(40.0),
-            color: Colors.purpleAccent,
-            child: Text("Three"),
+          Expanded(
+            flex: 3,
+            child: Container(
+              color: Colors.amber,
+              padding: EdgeInsets.all(30.0),
+              child: Text("Three"),
+            ),
           ),
         ],
       ),
