@@ -1,58 +1,38 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(home: Home()));
+  runApp(MaterialApp(home: QuoteList()));
 }
 
-class Home extends StatelessWidget {
-  const Home({super.key});
-  // const Home({super.key});
+class QuoteList extends StatefulWidget {
+  const QuoteList({super.key});
+
+  @override
+  State<QuoteList> createState() => _QuoteListState();
+}
+
+class _QuoteListState extends State<QuoteList> {
+  List<String> quotes = [
+    'The best way to get started is to quit talking and begin doing.',
+    'Don\'t let yesterday take up too much of today.',
+    'It\'s not whether you get knocked down, it\'s whether you get up.',
+    'If you are working on something exciting, it will keep you motivated.',
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: Text("My first App"),
+        title: Text("Awesome Quotes"),
         centerTitle: true,
-        backgroundColor: Colors.red[600],
+        backgroundColor: Colors.redAccent,
+        foregroundColor: Colors.white,
       ),
-
-      body: Row(
-        children: <Widget>[
-          Expanded(
-            flex: 6,
-            child: Container(
-              color: Colors.cyan,
-              padding: EdgeInsets.all(30.0),
-              child: Text("One"),
-            ),
-          ),
-          Expanded(
-            flex: 3,
-            child: Container(
-              color: Colors.pink,
-              padding: EdgeInsets.all(30.0),
-              child: Text("Two"),
-            ),
-          ),
-          Expanded(
-            flex: 3,
-            child: Container(
-              color: Colors.amber,
-              padding: EdgeInsets.all(30.0),
-              child: Text("Three"),
-            ),
-          ),
-        ],
-      ),
-
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Add your code here!
-          print("Button clicked!");
-        },
-        child: Text("Click"),
-        backgroundColor: Colors.red[600],
+      body: Column(
+        children: quotes.map((quote) {
+          return Text(quote);
+        }).toList(),
       ),
     );
   }
