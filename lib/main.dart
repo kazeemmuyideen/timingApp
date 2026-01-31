@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'quote.dart';
 
 void main() {
   runApp(MaterialApp(home: QuoteList()));
@@ -12,11 +13,24 @@ class QuoteList extends StatefulWidget {
 }
 
 class _QuoteListState extends State<QuoteList> {
-  List<String> quotes = [
-    'The best way to get started is to quit talking and begin doing.',
-    'Don\'t let yesterday take up too much of today.',
-    'It\'s not whether you get knocked down, it\'s whether you get up.',
-    'If you are working on something exciting, it will keep you motivated.',
+  List<Quote> quotes = [
+    Quote(
+      author: 'John Doe',
+      text: 'The best way to get started is to quit talking and begin doing.',
+    ),
+    Quote(
+      author: 'Jane Smith',
+      text: 'Don\'t let yesterday take up too much of today.',
+    ),
+    Quote(
+      author: 'Will Johnson',
+      text: 'It\'s not whether you get knocked down, it\'s whether you get up.',
+    ),
+    Quote(
+      author: 'Emily Davis',
+      text:
+          'If you are working on something exciting, it will keep you motivated.',
+    ),
   ];
 
   @override
@@ -31,7 +45,7 @@ class _QuoteListState extends State<QuoteList> {
       ),
       body: Column(
         children: quotes.map((quote) {
-          return Text(quote);
+          return Text('"${quote.text}" - ${quote.author}');
         }).toList(),
       ),
     );
